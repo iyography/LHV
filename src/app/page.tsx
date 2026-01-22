@@ -1,6 +1,84 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import { useEffect, useRef, useState } from "react";
+
+// Generate poster image URL from Cloudinary video URL
+function getPosterFromVideo(videoUrl: string): string {
+  return videoUrl
+    .replace("/video/upload/q_auto,f_auto/", "/video/upload/so_0,f_jpg,q_auto/")
+    .replace(".mp4", ".jpg");
+}
+
+// AutoPlay Video component - hides video until playing to avoid play button
+function AutoPlayVideo({ src, className }: { src: string; className: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const posterUrl = getPosterFromVideo(src);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Force muted state (required for mobile autoplay)
+    video.muted = true;
+
+    // Show video when it starts playing
+    const handlePlaying = () => setIsPlaying(true);
+    video.addEventListener("playing", handlePlaying);
+
+    // Attempt to play
+    const playVideo = () => {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+    };
+
+    // Try on various events
+    video.addEventListener("loadedmetadata", playVideo);
+    video.addEventListener("canplay", playVideo);
+    playVideo();
+
+    // Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) playVideo();
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(video);
+
+    // User interaction fallback
+    const handleInteraction = () => playVideo();
+    document.addEventListener("touchstart", handleInteraction, { once: true, passive: true });
+    document.addEventListener("click", handleInteraction, { once: true });
+    document.addEventListener("scroll", handleInteraction, { once: true, passive: true });
+
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("playing", handlePlaying);
+    };
+  }, []);
+
+  return (
+    <div className={className} style={{ backgroundImage: `url(${posterUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        controls={false}
+        className={`w-full h-full object-cover transition-opacity duration-300 ${isPlaying ? "opacity-100" : "opacity-0"}`}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    </div>
+  );
+}
 
 // ============================================
 // DESIGN 1: Dark Luxe (Current)
@@ -18,9 +96,7 @@ function Design1() {
     <div className="bg-[#0A0A0A] text-[#FAF6E3] relative">
       {/* Hero */}
       <section className="min-h-screen relative overflow-hidden flex items-center">
-        <video key={videos.hero} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-60">
-          <source src={videos.hero} type="video/mp4" />
-        </video>
+        <AutoPlayVideo src={videos.hero} className="absolute inset-0 w-full h-full object-cover opacity-60" />
         <div
           className="pointer-events-none absolute inset-0 z-10 opacity-[0.15]"
           style={{
@@ -50,9 +126,7 @@ function Design1() {
       {/* What Is Recess - Video & Text */}
       <section id="why" className="grid lg:grid-cols-2">
         <div className="aspect-square lg:aspect-auto lg:h-screen relative">
-          <video key={videos.about} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-            <source src={videos.about} type="video/mp4" />
-          </video>
+          <AutoPlayVideo src={videos.about} className="absolute inset-0 w-full h-full object-cover" />
         </div>
         <div className="flex items-center justify-center p-12 lg:p-24">
           <div className="max-w-lg">
@@ -114,18 +188,14 @@ function Design1() {
       <section className="py-20 px-6 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="aspect-[21/9] rounded-2xl overflow-hidden">
-            <video key={videos.feature} autoPlay muted loop playsInline className="w-full h-full object-cover">
-              <source src={videos.feature} type="video/mp4" />
-            </video>
+            <AutoPlayVideo src={videos.feature} className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
 
       {/* Find Your People */}
       <section className="h-[70vh] relative">
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src={videos.findPeople} type="video/mp4" />
-        </video>
+        <AutoPlayVideo src={videos.findPeople} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <p className="font-script text-5xl md:text-7xl text-white text-center px-8">
             Find your people.
@@ -148,9 +218,7 @@ function Design1() {
 
       {/* What This Isn't */}
       <section className="py-24 px-8 relative overflow-hidden">
-        <video key={videos.whatIsnt} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src={videos.whatIsnt} type="video/mp4" />
-        </video>
+        <AutoPlayVideo src={videos.whatIsnt} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#D4A853] block mb-8">What This Isn&apos;t</span>
