@@ -1,0 +1,11 @@
+# Videos
+videos/
+public/videos/
+*.mp4
+
+# Large files
+guide.pdf
+*.docx
+
+# Dev files
+.next/

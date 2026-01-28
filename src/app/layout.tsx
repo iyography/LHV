@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Parisienne, Cormorant_Garamond, Space_Grotesk, Inter } from "next/font/google";
+import { Parisienne, Cormorant_Garamond, Space_Grotesk, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const parisienne = Parisienne({
@@ -30,31 +30,38 @@ const inter = Inter({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Recess | For Skool Owners",
-  description: "You don't have to build alone anymore. Recess is where Skool owners rest, connect, and remember why they started. Free forever.",
+  title: "Feel Fully Alive Again",
+  description: "Calm your mind. Heal yourself. Take back your inner power. Energy healing, Qigong, Reiki, and Daoist wisdom guided by a lifetime of practice.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Recess | For Skool Owners",
-    description: "You don't have to build alone anymore. Recess is where Skool owners rest, connect, and remember why they started. Free forever.",
+    title: "Feel Fully Alive Again",
+    description: "Calm your mind. Heal yourself. Take back your inner power. Energy healing, Qigong, Reiki, and Daoist wisdom guided by a lifetime of practice.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Recess - For Skool Owners",
+        alt: "Feel Fully Alive Again",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Recess | For Skool Owners",
-    description: "You don't have to build alone anymore. Recess is where Skool owners rest, connect, and remember why they started. Free forever.",
+    title: "Feel Fully Alive Again",
+    description: "Calm your mind. Heal yourself. Take back your inner power. Energy healing, Qigong, Reiki, and Daoist wisdom guided by a lifetime of practice.",
     images: ["/og-image.png"],
   },
 };
@@ -67,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${parisienne.variable} ${cormorant.variable} ${spaceGrotesk.variable} ${inter.variable} antialiased`}
+        className={`${parisienne.variable} ${cormorant.variable} ${spaceGrotesk.variable} ${inter.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>

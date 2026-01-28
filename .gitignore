@@ -47,3 +47,13 @@ public/videos/*.mp4
 # Large video files
 rvids/
 public/videos/
+peace/
+public/peace/
+
+# Non-code files
+*.docx
+*.pdf
+*.code-workspace
+/meeting.json
+/online.png
+/guide.pdf
