@@ -8,16 +8,17 @@ import Navbar from "@/components/Navbar";
 
 type Step = "intro" | "questions" | "open-response" | "contact" | "calculating" | "results";
 
-type EnergyType = "drained" | "stagnated";
-type EmotionType = "anger" | "sadness" | "worry" | "fear";
+type SpiritualPathType = "isolated" | "stagnated" | "bridgeReady";
+type ChallengeType = "alignment" | "scaling" | "integration" | "community";
+type ReadinessLevel = "exploring" | "committed" | "ready" | "transformation";
 type InvestmentLevel = "free" | "low" | "medium" | "high";
 
 interface QuizOption {
   text: string;
   tags?: {
-    energy?: EnergyType;
-    emotion?: EmotionType;
-    investment?: InvestmentLevel;
+    path?: SpiritualPathType;
+    challenge?: ChallengeType;
+    readiness?: ReadinessLevel;
   };
 }
 
@@ -29,208 +30,214 @@ interface QuizQuestion {
 // ─── Questions (Tony's 25-Question Quiz) ─────────────────────────────────────
 
 const QUESTIONS: QuizQuestion[] = [
-  // CORE DIAGNOSTIC (1-5)
+  // SPIRITUAL BUSINESS DIAGNOSTIC (1-5)
   {
-    question: "Which describes you best most days?",
+    question: "When you think about your spiritual business, which resonates most?",
     options: [
-      { text: "I feel exhausted and depleted", tags: { energy: "drained" } },
-      { text: "I feel tense, wired, or stuck", tags: { energy: "stagnated" } },
+      { text: "I feel like I'm building in isolation, without real community", tags: { path: "isolated" } },
+      { text: "I have the spiritual knowledge but struggle with practical implementation", tags: { path: "stagnated" } },
+      { text: "I'm ready to bridge spirituality and technology to serve others", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "What emotion do you feel MOST often?",
+    question: "What's your biggest challenge as a spiritual entrepreneur?",
     options: [
-      { text: "Anger / frustration", tags: { emotion: "anger" } },
-      { text: "Sadness / grief", tags: { emotion: "sadness" } },
-      { text: "Worry / overthinking", tags: { emotion: "worry" } },
-      { text: "Fear / anxiety", tags: { emotion: "fear" } },
+      { text: "Feeling misaligned from my true purpose", tags: { challenge: "alignment" } },
+      { text: "Can't scale my spiritual gifts into a sustainable business", tags: { challenge: "scaling" } },
+      { text: "Struggle to integrate spirituality with modern technology", tags: { challenge: "integration" } },
+      { text: "Building alone without supportive community", tags: { challenge: "community" } },
     ],
   },
   {
-    question: "Do you tend to feel more…",
+    question: "When it comes to using technology in your spiritual work:",
     options: [
-      { text: "Cold", tags: { energy: "drained" } },
-      { text: "Warm / hot", tags: { energy: "stagnated" } },
+      { text: "I avoid it - feels inauthentic to my spiritual path", tags: { path: "isolated" } },
+      { text: "I want to use it but don't know how to integrate it meaningfully", tags: { path: "stagnated" } },
+      { text: "I'm excited about the possibilities of spiritual-tech integration", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "When you experience pain or tension, does gentle touch usually feel:",
+    question: "How do you currently connect with other spiritual entrepreneurs?",
     options: [
-      { text: "Comforting and relieving", tags: { energy: "drained" } },
-      { text: "Uncomfortable or irritating", tags: { energy: "stagnated" } },
+      { text: "I don't - I mostly work in isolation", tags: { path: "isolated" } },
+      { text: "I try but struggle to find the right community", tags: { challenge: "community" } },
+      { text: "I'm building connections and want deeper collaboration", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "How do you feel after resting?",
+    question: "What would 'success' look like for your spiritual business in 60 days?",
     options: [
-      { text: "Slightly better, but still tired", tags: { energy: "drained" } },
-      { text: "Restless or stiff", tags: { energy: "stagnated" } },
-      { text: "Much better", tags: { energy: "drained" } },
+      { text: "Finding my authentic voice and purpose clarity", tags: { challenge: "alignment" } },
+      { text: "Building a sustainable income from my spiritual gifts", tags: { challenge: "scaling" } },
+      { text: "Creating a connected community of like-minded souls", tags: { challenge: "community" } },
+      { text: "Seamlessly blending spirituality with cutting-edge tools", tags: { challenge: "integration" } },
     ],
   },
-  // ENERGY & BODY SIGNALS (6-10)
+  // SPIRITUAL BUSINESS ALIGNMENT (6-10)
   {
-    question: "Your energy levels are:",
+    question: "When you wake up and think about your spiritual work:",
     options: [
-      { text: "Low and flat", tags: { energy: "drained" } },
-      { text: "Up and down" },
-      { text: "High but tense", tags: { energy: "stagnated" } },
-    ],
-  },
-  {
-    question: "How does movement usually feel?",
-    options: [
-      { text: "Hard to get started, but helpful", tags: { energy: "drained" } },
-      { text: "I crave movement", tags: { energy: "stagnated" } },
-      { text: "I feel stiff or blocked", tags: { energy: "stagnated" } },
+      { text: "I feel disconnected from my purpose", tags: { path: "isolated" } },
+      { text: "I have ideas but struggle to implement them", tags: { path: "stagnated" } },
+      { text: "I'm excited about the possibilities ahead", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "Where do you hold the most tension?",
+    question: "How do you feel about combining ancient spiritual wisdom with modern technology?",
     options: [
-      { text: "Chest / breath" },
-      { text: "Belly / digestion" },
-      { text: "Neck / shoulders" },
-      { text: "Lower back / hips" },
+      { text: "Uncomfortable - they seem to conflict", tags: { path: "isolated" } },
+      { text: "Intrigued but unsure how to do it authentically", tags: { path: "stagnated" } },
+      { text: "Excited - I see them as natural allies", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "Your sleep is:",
+    question: "What's the biggest gap between your spiritual vision and your current reality?",
     options: [
-      { text: "Not refreshing" },
-      { text: "Light or restless" },
-      { text: "Generally okay" },
+      { text: "I lack clarity on my unique spiritual gifts", tags: { challenge: "alignment" } },
+      { text: "I can't turn my wisdom into sustainable income", tags: { challenge: "scaling" } },
+      { text: "I feel isolated without a supportive community", tags: { challenge: "community" } },
+      { text: "I can't leverage technology to amplify my impact", tags: { challenge: "integration" } },
     ],
   },
   {
-    question: "When stressed, your body tends to:",
+    question: "When you imagine your ideal spiritual business:",
     options: [
-      { text: "Shut down", tags: { energy: "drained" } },
-      { text: "Tighten up", tags: { energy: "stagnated" } },
-      { text: "Race", tags: { energy: "stagnated" } },
-    ],
-  },
-  // EMOTIONAL PATTERN CLARIFIERS (11-14)
-  {
-    question: "When things don't go as planned, you:",
-    options: [
-      { text: "Get irritated or snappy", tags: { emotion: "anger" } },
-      { text: "Feel discouraged", tags: { emotion: "sadness" } },
-      { text: "Start worrying", tags: { emotion: "worry" } },
-      { text: "Feel anxious or unsafe", tags: { emotion: "fear" } },
+      { text: "I see myself working alone, serving individuals deeply", tags: { path: "isolated" } },
+      { text: "I have the vision but struggle with practical steps", tags: { path: "stagnated" } },
+      { text: "I see connected communities co-creating transformation", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "Which statement feels truest?",
+    question: "What's your relationship with spiritual authority and teaching?",
     options: [
-      { text: "I feel stuck", tags: { energy: "stagnated" } },
-      { text: "I feel heavy", tags: { energy: "drained" } },
-      { text: "I feel scattered", tags: { emotion: "worry" } },
-      { text: "I feel overwhelmed", tags: { emotion: "fear" } },
+      { text: "I avoid positioning myself as a teacher - feels inauthentic", tags: { path: "isolated" } },
+      { text: "I have wisdom to share but struggle with confidence", tags: { path: "stagnated" } },
+      { text: "I'm ready to step into spiritual leadership", tags: { path: "bridgeReady" } },
+    ],
+  },
+  // SPIRITUAL BUSINESS CHALLENGES (11-15)
+  {
+    question: "When your spiritual business faces a setback, you:",
+    options: [
+      { text: "Question if this path is meant for you", tags: { challenge: "alignment" } },
+      { text: "Worry about financial sustainability", tags: { challenge: "scaling" } },
+      { text: "Feel frustrated with slow progress", tags: { challenge: "integration" } },
+      { text: "Feel alone in the struggle", tags: { challenge: "community" } },
     ],
   },
   {
-    question: "What drains you the fastest?",
+    question: "Which statement resonates most with your current spiritual business journey?",
     options: [
-      { text: "Conflict", tags: { emotion: "anger" } },
-      { text: "Loss or disappointment", tags: { emotion: "sadness" } },
-      { text: "Uncertainty", tags: { emotion: "worry" } },
-      { text: "Responsibility", tags: { emotion: "fear" } },
+      { text: "I'm stuck between spiritual authenticity and business success", tags: { challenge: "alignment" } },
+      { text: "I have followers but struggle to monetize ethically", tags: { challenge: "scaling" } },
+      { text: "I resist technology because it feels disconnected from spirit", tags: { challenge: "integration" } },
+      { text: "I'm building alone and feel isolated from peers", tags: { challenge: "community" } },
     ],
   },
   {
-    question: "What brings the most relief?",
+    question: "What's your biggest fear around growing your spiritual business?",
     options: [
-      { text: "Releasing tension", tags: { emotion: "anger" } },
-      { text: "Being comforted", tags: { emotion: "sadness" } },
-      { text: "Reassurance", tags: { emotion: "worry" } },
-      { text: "Feeling grounded", tags: { emotion: "fear" } },
-    ],
-  },
-  // HEALING STYLE & READINESS (15-19)
-  {
-    question: "What kind of healing do you need most right now?",
-    options: [
-      { text: "Rest and nourishment", tags: { energy: "drained" } },
-      { text: "Movement and flow", tags: { energy: "stagnated" } },
-      { text: "Emotional release" },
-      { text: "Clarity and direction" },
+      { text: "Losing my authentic spiritual connection", tags: { challenge: "alignment" } },
+      { text: "Not being able to sustain it financially", tags: { challenge: "scaling" } },
+      { text: "Technology making my work feel impersonal", tags: { challenge: "integration" } },
+      { text: "Success isolating me from real community", tags: { challenge: "community" } },
     ],
   },
   {
-    question: "How do you usually respond to stress?",
+    question: "When you imagine your spiritual business thriving, what excites you most?",
     options: [
-      { text: "Withdraw", tags: { energy: "drained" } },
-      { text: "Push through", tags: { energy: "stagnated" } },
-      { text: "Overthink", tags: { emotion: "worry" } },
-      { text: "Freeze", tags: { emotion: "fear" } },
+      { text: "Being fully aligned with my soul's purpose", tags: { challenge: "alignment" } },
+      { text: "Creating sustainable income from my gifts", tags: { challenge: "scaling" } },
+      { text: "Using technology to reach souls worldwide", tags: { challenge: "integration" } },
+      { text: "Building a transformational community", tags: { challenge: "community" } },
+    ],
+  },
+  // SPIRITUAL BUSINESS READINESS & APPROACH (15-19)
+  {
+    question: "What kind of support does your spiritual business need most right now?",
+    options: [
+      { text: "Clarity on my unique spiritual gifts and offerings", tags: { challenge: "alignment" } },
+      { text: "Practical systems to generate consistent income", tags: { challenge: "scaling" } },
+      { text: "Technology that enhances rather than replaces human connection", tags: { challenge: "integration" } },
+      { text: "Connection with other spiritual entrepreneurs", tags: { challenge: "community" } },
     ],
   },
   {
-    question: "How consistent are you with self-care?",
+    question: "How do you usually handle spiritual business challenges?",
     options: [
-      { text: "I struggle to start" },
-      { text: "I start but don't sustain" },
-      { text: "I'm fairly consistent" },
+      { text: "Retreat into meditation and inner work alone", tags: { path: "isolated" } },
+      { text: "Research solutions but struggle to implement", tags: { path: "stagnated" } },
+      { text: "Seek collaborative solutions with others", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "How much time can you realistically commit each week?",
+    question: "How ready are you to invest time in building your spiritual business?",
     options: [
-      { text: "5–10 minutes" },
-      { text: "15–30 minutes" },
-      { text: "1+ hour" },
+      { text: "I'm exploring but haven't fully committed", tags: { readiness: "exploring" } },
+      { text: "I'm committed but need the right guidance", tags: { readiness: "committed" } },
+      { text: "I'm ready to take serious action", tags: { readiness: "ready" } },
+      { text: "I'm ready for complete transformation", tags: { readiness: "transformation" } },
     ],
   },
   {
-    question: "What feels hardest right now?",
+    question: "How much time can you realistically dedicate to your spiritual business weekly?",
     options: [
-      { text: "Lack of energy", tags: { energy: "drained" } },
-      { text: "Feeling stuck", tags: { energy: "stagnated" } },
-      { text: "Emotional heaviness", tags: { emotion: "sadness" } },
-      { text: "Constant worry", tags: { emotion: "worry" } },
-    ],
-  },
-  // SUPPORT & INVESTMENT (20-23)
-  {
-    question: "What do you want help with FIRST?",
-    options: [
-      { text: "Restoring energy", tags: { energy: "drained" } },
-      { text: "Releasing tension", tags: { energy: "stagnated" } },
-      { text: "Emotional balance" },
-      { text: "Feeling safe and calm", tags: { emotion: "fear" } },
+      { text: "2-5 hours (exploring phase)", tags: { readiness: "exploring" } },
+      { text: "5-15 hours (building phase)", tags: { readiness: "committed" } },
+      { text: "15+ hours (growth phase)", tags: { readiness: "ready" } },
+      { text: "Full-time dedication (transformation phase)", tags: { readiness: "transformation" } },
     ],
   },
   {
-    question: "How supported do you feel in your life right now?",
+    question: "What feels most challenging about your spiritual entrepreneurship journey?",
     options: [
-      { text: "Not much" },
-      { text: "Somewhat" },
-      { text: "Very supported" },
+      { text: "Finding my authentic voice in a crowded market", tags: { challenge: "alignment" } },
+      { text: "Balancing spiritual integrity with business success", tags: { challenge: "scaling" } },
+      { text: "Keeping up with technology while staying heart-centered", tags: { challenge: "integration" } },
+      { text: "Building without compromising my values", tags: { challenge: "community" } },
+    ],
+  },
+  // TRANSFORMATION READINESS & INVESTMENT (20-23)
+  {
+    question: "What do you want help with FIRST in your spiritual business?",
+    options: [
+      { text: "Clarifying my unique spiritual gifts and message", tags: { challenge: "alignment" } },
+      { text: "Building sustainable income streams", tags: { challenge: "scaling" } },
+      { text: "Integrating technology authentically", tags: { challenge: "integration" } },
+      { text: "Building genuine community and connections", tags: { challenge: "community" } },
     ],
   },
   {
-    question: "When it comes to investing in feeling better, which feels most true right now?",
+    question: "How supported do you feel as a spiritual entrepreneur?",
     options: [
-      { text: "I need free or very low-cost support", tags: { investment: "free" } },
-      { text: "I could invest a small amount if it helps", tags: { investment: "low" } },
-      { text: "I'm open to investing in deeper support", tags: { investment: "medium" } },
-      { text: "I'm ready to invest in real transformation", tags: { investment: "high" } },
+      { text: "Very isolated - building completely alone", tags: { path: "isolated" } },
+      { text: "Somewhat supported but need more guidance", tags: { path: "stagnated" } },
+      { text: "Well-supported and ready to collaborate", tags: { path: "bridgeReady" } },
     ],
   },
   {
-    question: "What kind of guidance helps you most?",
+    question: "When it comes to investing in your spiritual business growth, what feels most true?",
     options: [
-      { text: "Gentle and steady" },
-      { text: "Clear and direct" },
-      { text: "Supportive and reassuring" },
+      { text: "I need free resources and community support first", tags: { investment: "free" } },
+      { text: "I could invest modestly in the right guidance", tags: { investment: "low" } },
+      { text: "I'm open to meaningful investment in transformation", tags: { investment: "medium" } },
+      { text: "I'm ready to invest significantly in building my legacy", tags: { investment: "high" } },
+    ],
+  },
+  {
+    question: "What kind of spiritual business guidance resonates most with you?",
+    options: [
+      { text: "Gentle, heart-centered approach", tags: { readiness: "exploring" } },
+      { text: "Clear, step-by-step frameworks", tags: { readiness: "committed" } },
+      { text: "Accelerated growth strategies", tags: { readiness: "ready" } },
+      { text: "Complete business transformation", tags: { readiness: "transformation" } },
     ],
   },
 ];
 
 // ─── Result Content ──────────────────────────────────────────────────────────
 
-const ENERGY_RESULTS: Record<EnergyType, {
+const SPIRITUAL_PATH_RESULTS: Record<SpiritualPathType, {
   title: string;
   subtitle: string;
   description: string[];
@@ -239,83 +246,111 @@ const ENERGY_RESULTS: Record<EnergyType, {
   startHere: string[];
   truth: string;
 }> = {
-  drained: {
-    title: "Primarily Drained",
-    subtitle: "Your system is low on reserves.",
+  isolated: {
+    title: "The Isolated Creator",
+    subtitle: "You have gifts, but you're building alone.",
     description: [
-      "You've been running on willpower for a long time.",
-      "Your body isn't asking for more effort — it's asking for support.",
-      "This often happens after long-term stress, caregiving, health challenges, or emotional load. You may still function… but underneath, your energy is thin.",
-      "This is not weakness. It's your system being honest.",
+      "You're a spiritual entrepreneur working in isolation, feeling disconnected from a supportive community.",
+      "You have knowledge and wisdom, but you're missing the collaborative energy that amplifies impact.",
+      "This often happens when you're building something meaningful but feel like you're the only one who 'gets it'.",
+      "Your gifts are real. They just need the right community to flourish.",
     ],
     helps: [
-      "Gentle, nourishing practices",
-      "Consistency over intensity",
-      "Feeling safe in your body",
-      "Being supported, not pushed",
+      "Authentic spiritual community connection",
+      "Collaborative creation spaces",
+      "Shared vision and purpose alignment",
+      "Gentle integration support",
     ],
     doesntHelp: [
-      "Forcing yourself",
-      "High-intensity routines",
-      "\"Powering through\"",
+      "More solo work",
+      "Generic business advice",
+      "Surface-level networking",
     ],
     startHere: [
-      "Gentle Qigong",
-      "Calming breathwork",
-      "Nervous system regulation",
-      "Simple daily rituals",
+      "Community-building frameworks",
+      "Authentic connection practices",
+      "Collaborative spiritual business models",
+      "Soul-aligned partnerships",
     ],
-    truth: "If you don't rebuild your energy intentionally, your body will eventually force rest in ways you didn't choose. You still have a say.",
+    truth: "Spiritual transformation happens in relationship. Your gifts multiply when shared with the right souls.",
   },
   stagnated: {
-    title: "Primarily Stagnated",
-    subtitle: "You have energy — it's just stuck.",
+    title: "The Visionary Stuck",
+    subtitle: "You see the vision but struggle with implementation.",
     description: [
-      "Your system isn't empty. It's blocked.",
-      "You may feel tense, restless, wired, or frustrated. Rest doesn't always help — sometimes it makes things worse.",
-      "Your energy wants to move, not collapse.",
+      "You have spiritual wisdom and business ideas, but translating them into practical action feels overwhelming.",
+      "You're caught between ancient wisdom and modern technology, unsure how to bridge them authentically.",
+      "Your vision is clear, but the path to manifestation feels foggy or blocked.",
     ],
     helps: [
-      "Flow and circulation",
-      "Releasing tension",
-      "Expressing what's held in",
-      "Guided movement",
+      "Step-by-step implementation frameworks",
+      "Spiritual-tech integration guides",
+      "Practical manifestation tools",
+      "Clear action pathways",
     ],
     doesntHelp: [
-      "Over-resting",
-      "Suppressing emotions",
-      "Staying in your head",
+      "More planning without action",
+      "Complex systems",
+      "Tech-first approaches",
     ],
     startHere: [
-      "Releasing Qigong",
-      "Breath-led movement",
-      "Emotional flow practices",
-      "Gentle structure",
+      "Spiritual business blueprints",
+      "Technology integration for soul work",
+      "Practical manifestation methods",
+      "Vision-to-reality frameworks",
     ],
-    truth: "Stagnation doesn't clear by thinking. It clears by movement with awareness.",
+    truth: "Your vision is sacred, but it needs grounded action. Spirit without structure remains just a dream.",
+  },
+  bridgeReady: {
+    title: "The Bridge Builder",
+    subtitle: "You're ready to unite spirituality with technology.",
+    description: [
+      "You see the powerful potential in combining ancient wisdom with modern tools.",
+      "You're excited about creating transformational experiences that serve others at scale.",
+      "You understand that technology can amplify spiritual impact when used consciously.",
+      "You're ready to lead the new wave of conscious entrepreneurs.",
+    ],
+    helps: [
+      "Advanced spiritual-tech frameworks",
+      "Scaling transformation systems",
+      "Community-building platforms",
+      "Impact amplification strategies",
+    ],
+    doesntHelp: [
+      "Basic spiritual practices alone",
+      "Tech-only solutions",
+      "Small-scale thinking",
+    ],
+    startHere: [
+      "Conscious technology integration",
+      "Scalable transformation systems",
+      "Community platform development",
+      "Impact measurement frameworks",
+    ],
+    truth: "You're here to bridge worlds. When spirituality and technology unite consciously, healing happens at scale.",
   },
 };
 
-const EMOTION_OVERLAYS: Record<EmotionType, { label: string; description: string; focus: string }> = {
-  anger: {
-    label: "Anger / Frustration",
-    description: "You're holding back expression. You need safe release and forward movement — not suppression.",
-    focus: "Flow, breath, expression.",
+const CHALLENGE_OVERLAYS: Record<ChallengeType, { label: string; description: string; focus: string }> = {
+  alignment: {
+    label: "Spiritual Alignment Challenge",
+    description: "You're seeking clarity on your authentic spiritual gifts and how to share them with the world.",
+    focus: "Purpose discovery, gift identification, authentic expression.",
   },
-  sadness: {
-    label: "Sadness / Grief",
-    description: "Something in you is asking to be acknowledged and held.",
-    focus: "Nourishment, breath, gentleness.",
+  scaling: {
+    label: "Scaling Challenge",
+    description: "You have spiritual wisdom but struggle to turn it into sustainable income and impact.",
+    focus: "Business models, monetization, sustainable systems.",
   },
-  worry: {
-    label: "Worry / Overthinking",
-    description: "Your mind is trying to create safety by controlling.",
-    focus: "Grounding, rhythm, body trust.",
+  integration: {
+    label: "Spiritual-Tech Integration Challenge",
+    description: "You want to use technology to amplify your spiritual work but don't know how to do it authentically.",
+    focus: "Conscious technology, authentic automation, digital spirituality.",
   },
-  fear: {
-    label: "Fear / Anxiety",
-    description: "Your system doesn't feel safe yet.",
-    focus: "Reassurance, slow rebuilding, consistency.",
+  community: {
+    label: "Community Building Challenge",
+    description: "You're building alone and need authentic connection with like-minded spiritual entrepreneurs.",
+    focus: "Community creation, collaboration, partnership building.",
   },
 };
 
@@ -335,12 +370,16 @@ export default function QuizPage() {
   const [answers, setAnswers] = useState<number[]>([]);
   const [openResponses, setOpenResponses] = useState({ ninetyDay: "", oneThingHelp: "" });
   const [contactForm, setContactForm] = useState({ fullName: "", email: "", phone: "" });
-  const [calcText, setCalcText] = useState("Reading your energy pattern...");
+  const [calcText, setCalcText] = useState("Analyzing your spiritual path...");
   const [direction, setDirection] = useState(1);
+  const [version, setVersion] = useState<1 | 2>(2);
+
+  // Video source based on version
+  const bgVideo = version === 1 ? "/peace/heart.mp4" : "/peace/6.mp4";
 
   // Computed results
-  const [resultEnergy, setResultEnergy] = useState<EnergyType>("drained");
-  const [resultEmotion, setResultEmotion] = useState<EmotionType>("sadness");
+  const [resultPath, setResultPath] = useState<SpiritualPathType>("isolated");
+  const [resultChallenge, setResultChallenge] = useState<ChallengeType>("alignment");
   const [resultInvestment, setResultInvestment] = useState<InvestmentLevel>("free");
 
   const totalQuestions = QUESTIONS.length;
@@ -388,9 +427,8 @@ export default function QuizPage() {
   // ─── Scoring ─────────────────────────────────────────────────────────────
 
   function calculateResults() {
-    let drainedScore = 0;
-    let stagnatedScore = 0;
-    const emotionCounts: Record<EmotionType, number> = { anger: 0, sadness: 0, worry: 0, fear: 0 };
+    const pathCounts: Record<SpiritualPathType, number> = { isolated: 0, stagnated: 0, bridgeReady: 0 };
+    const challengeCounts: Record<ChallengeType, number> = { alignment: 0, scaling: 0, integration: 0, community: 0 };
     let investment: InvestmentLevel = "free";
 
     answers.forEach((optIdx, qIdx) => {
@@ -399,30 +437,31 @@ export default function QuizPage() {
       const tags = q.options[optIdx].tags;
       if (!tags) return;
 
-      if (tags.energy === "drained") drainedScore++;
-      if (tags.energy === "stagnated") stagnatedScore++;
-      if (tags.emotion) emotionCounts[tags.emotion]++;
+      if (tags.path) pathCounts[tags.path]++;
+      if (tags.challenge) challengeCounts[tags.challenge]++;
       if (tags.investment) investment = tags.investment;
     });
 
-    const energy: EnergyType = drainedScore >= stagnatedScore ? "drained" : "stagnated";
-
-    const sortedEmotions = (Object.entries(emotionCounts) as [EmotionType, number][])
+    const sortedPaths = (Object.entries(pathCounts) as [SpiritualPathType, number][])
       .sort((a, b) => b[1] - a[1]);
-    const emotion = sortedEmotions[0][0];
+    const path = sortedPaths[0][0];
 
-    setResultEnergy(energy);
-    setResultEmotion(emotion);
+    const sortedChallenges = (Object.entries(challengeCounts) as [ChallengeType, number][])
+      .sort((a, b) => b[1] - a[1]);
+    const challenge = sortedChallenges[0][0];
+
+    setResultPath(path);
+    setResultChallenge(challenge);
     setResultInvestment(investment);
 
-    return { energy, emotion, investment };
+    return { path, challenge, investment };
   }
 
   // ─── Submit ──────────────────────────────────────────────────────────────
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const { energy, emotion, investment } = calculateResults();
+    const { path, challenge, investment } = calculateResults();
 
     goTo("calculating");
 
@@ -440,8 +479,8 @@ export default function QuizPage() {
           fullName: contactForm.fullName,
           email: contactForm.email,
           phone: contactForm.phone,
-          energyType: energy,
-          emotionType: emotion,
+          spiritualPath: path,
+          primaryChallenge: challenge,
           investmentLevel: investment,
           ninetyDayGoal: openResponses.ninetyDay,
           oneThingHelp: openResponses.oneThingHelp,
@@ -459,9 +498,9 @@ export default function QuizPage() {
   useEffect(() => {
     if (step !== "calculating") return;
     const messages = [
-      "Reading your energy pattern...",
-      "Mapping your emotional landscape...",
-      "Preparing your healing pathway...",
+      "Analyzing your spiritual path...",
+      "Mapping your entrepreneurial soul alignment...",
+      "Preparing your transformation pathway...",
     ];
     let i = 0;
     const interval = setInterval(() => {
@@ -479,8 +518,8 @@ export default function QuizPage() {
 
   // ─── Result data ─────────────────────────────────────────────────────────
 
-  const energyResult = ENERGY_RESULTS[resultEnergy];
-  const emotionOverlay = EMOTION_OVERLAYS[resultEmotion];
+  const pathResult = SPIRITUAL_PATH_RESULTS[resultPath];
+  const challengeOverlay = CHALLENGE_OVERLAYS[resultChallenge];
 
   // ─── Progress ────────────────────────────────────────────────────────────
 
@@ -507,29 +546,29 @@ export default function QuizPage() {
             >
               <video
                 autoPlay muted loop playsInline preload="auto"
-                className="absolute inset-0 w-full h-full object-cover opacity-30"
+                className="absolute inset-0 w-full h-full object-cover opacity-80"
               >
-                <source src="/peace/9.mp4" type="video/mp4" />
+                <source src={bgVideo} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-[#0A0A0A]/30" />
 
               <div className="relative z-10 max-w-2xl">
                 <h1 className="font-ninja text-3xl md:text-5xl mb-6 leading-tight">
-                  FEEL FULLY{" "}
-                  <span className="text-emerald-400">ALIVE AGAIN</span>
+                  ✨💗🦋{" "}
+                  <span className="text-[#EF4444]">SPIRITUAL ENTREPRENEUR PATHWAY</span>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-400 mb-4 leading-relaxed">
-                  Self-Healing Pathway Quiz
+                  Soul-Aligned Business Assessment
                 </p>
                 <p className="text-base text-gray-500 mb-10 leading-relaxed max-w-lg mx-auto">
-                  25 questions to understand your energy, your emotions, and
-                  what your body is actually asking for. No jargon. Just clarity.
+                  25 questions to discover your spiritual business path, identify your unique challenges, and
+                  reveal the transformation framework that will align your soul's work with sustainable success.
                 </p>
                 <button
                   onClick={() => goTo("questions")}
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white text-lg font-semibold px-10 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]"
+                  className="bg-[#EF4444] hover:bg-[#DC2626] text-white text-lg font-semibold px-10 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]"
                 >
-                  Begin Your Assessment &rarr;
+                  Discover My Spiritual Business Path &rarr;
                 </button>
               </div>
             </motion.div>
@@ -548,9 +587,9 @@ export default function QuizPage() {
             >
               <video
                 autoPlay muted loop playsInline preload="auto"
-                className="absolute inset-0 w-full h-full object-cover opacity-20"
+                className="absolute inset-0 w-full h-full object-cover opacity-75"
               >
-                <source src="/peace/9.mp4" type="video/mp4" />
+                <source src={bgVideo} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-[#0A0A0A]/40" />
 
@@ -575,7 +614,7 @@ export default function QuizPage() {
                       </div>
                       <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
                         <motion.div
-                          className="h-full bg-emerald-500 rounded-full"
+                          className="h-full bg-[#EF4444] rounded-full"
                           animate={{ width: `${progressPercent}%` }}
                           transition={{ duration: 0.4 }}
                         />
@@ -590,7 +629,7 @@ export default function QuizPage() {
                         <button
                           key={idx}
                           onClick={() => selectAnswer(idx)}
-                          className="w-full text-left p-5 rounded-xl border border-gray-800 bg-[#111111] hover:border-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 text-lg"
+                          className="w-full text-left p-5 rounded-xl border border-gray-800 bg-[#111111] hover:border-[#EF4444] hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] transition-all duration-300 text-lg"
                         >
                           {opt.text}
                         </button>
@@ -615,9 +654,9 @@ export default function QuizPage() {
             >
               <video
                 autoPlay muted loop playsInline preload="auto"
-                className="absolute inset-0 w-full h-full object-cover opacity-20"
+                className="absolute inset-0 w-full h-full object-cover opacity-75"
               >
-                <source src="/peace/9.mp4" type="video/mp4" />
+                <source src={bgVideo} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-[#0A0A0A]/40" />
 
@@ -632,31 +671,31 @@ export default function QuizPage() {
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-xl font-bold mb-3">
-                      In 90 days, what would feel like real success for you?
+                      In 60 days, what would feel like real success for your spiritual business?
                     </h3>
                     <textarea
                       value={openResponses.ninetyDay}
                       onChange={(e) => setOpenResponses({ ...openResponses, ninetyDay: e.target.value })}
-                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors min-h-[100px] resize-none"
+                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#EF4444] transition-colors min-h-[100px] resize-none"
                       placeholder="Take a moment to imagine..."
                     />
                   </div>
 
                   <div>
                     <h3 className="text-xl font-bold mb-3">
-                      If I could help you with ONE thing, what would it be?
+                      If I could help you with ONE thing in your spiritual entrepreneurship journey, what would it be?
                     </h3>
                     <textarea
                       value={openResponses.oneThingHelp}
                       onChange={(e) => setOpenResponses({ ...openResponses, oneThingHelp: e.target.value })}
-                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors min-h-[100px] resize-none"
+                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#EF4444] transition-colors min-h-[100px] resize-none"
                       placeholder="Be honest — there's no wrong answer."
                     />
                   </div>
 
                   <button
                     onClick={() => goTo("contact")}
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-lg font-semibold py-4 rounded-lg transition-all duration-300 hover:scale-[1.02]"
+                    className="w-full bg-[#EF4444] hover:bg-[#DC2626] text-white text-lg font-semibold py-4 rounded-lg transition-all duration-300 hover:scale-[1.02]"
                   >
                     Continue &rarr;
                   </button>
@@ -678,9 +717,9 @@ export default function QuizPage() {
             >
               <video
                 autoPlay muted loop playsInline preload="auto"
-                className="absolute inset-0 w-full h-full object-cover opacity-20"
+                className="absolute inset-0 w-full h-full object-cover opacity-75"
               >
-                <source src="/peace/9.mp4" type="video/mp4" />
+                <source src={bgVideo} type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-[#0A0A0A]/40" />
 
@@ -689,7 +728,7 @@ export default function QuizPage() {
                   Almost there
                 </h2>
                 <p className="text-gray-400 text-center mb-8">
-                  Enter your details to see your personalized healing pathway.
+                  Enter your details to see your personalized spiritual entrepreneurship pathway.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -700,7 +739,7 @@ export default function QuizPage() {
                       required
                       value={contactForm.fullName}
                       onChange={(e) => setContactForm({ ...contactForm, fullName: e.target.value })}
-                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#EF4444] transition-colors"
                       placeholder="Your full name"
                     />
                   </div>
@@ -711,7 +750,7 @@ export default function QuizPage() {
                       required
                       value={contactForm.email}
                       onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#EF4444] transition-colors"
                       placeholder="you@email.com"
                     />
                   </div>
@@ -722,15 +761,15 @@ export default function QuizPage() {
                       required
                       value={contactForm.phone}
                       onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                      className="w-full bg-[#111111] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#EF4444] transition-colors"
                       placeholder="(555) 123-4567"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-lg font-semibold py-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] mt-4"
+                    className="w-full bg-[#EF4444] hover:bg-[#DC2626] text-white text-lg font-semibold py-4 rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] mt-4"
                   >
-                    Reveal My Healing Pathway
+                    Reveal My Spiritual Business Path
                   </button>
                 </form>
               </div>
@@ -758,7 +797,7 @@ export default function QuizPage() {
               <h2 className="text-2xl font-bold mb-6">Reading your responses...</h2>
               <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden mb-6">
                 <motion.div
-                  className="h-full bg-emerald-500 rounded-full"
+                  className="h-full bg-[#EF4444] rounded-full"
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 3, ease: "linear" }}
@@ -795,7 +834,7 @@ export default function QuizPage() {
                     transition={{ type: "spring", bounce: 0.5, delay: 0.2 }}
                     className="inline-block text-7xl mb-4"
                   >
-                    {resultEnergy === "drained" ? "🌱" : "🔥"}
+                    {resultPath === "isolated" ? "🌱" : resultPath === "stagnated" ? "🔥" : "🌉"}
                   </motion.div>
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
@@ -803,7 +842,7 @@ export default function QuizPage() {
                     transition={{ delay: 0.4 }}
                     className="text-3xl md:text-4xl font-bold mb-2"
                   >
-                    <span className="text-emerald-400">{energyResult.title}</span>
+                    <span className="text-[#F87171]">{pathResult.title}</span>
                   </motion.h1>
                   <motion.p
                     initial={{ opacity: 0 }}
@@ -811,7 +850,7 @@ export default function QuizPage() {
                     transition={{ delay: 0.5 }}
                     className="text-xl text-gray-300 italic"
                   >
-                    &ldquo;{energyResult.subtitle}&rdquo;
+                    &ldquo;{pathResult.subtitle}&rdquo;
                   </motion.p>
                 </div>
 
@@ -822,7 +861,7 @@ export default function QuizPage() {
                   transition={{ delay: 0.7 }}
                   className="mb-8 space-y-4"
                 >
-                  {energyResult.description.map((p, i) => (
+                  {pathResult.description.map((p, i) => (
                     <p key={i} className="text-gray-300 text-lg leading-relaxed">
                       {p}
                     </p>
@@ -836,13 +875,13 @@ export default function QuizPage() {
                   transition={{ delay: 0.8 }}
                   className="bg-[#111111] rounded-xl p-6 mb-6"
                 >
-                  <h3 className="text-lg font-semibold text-emerald-400 mb-4">
+                  <h3 className="text-lg font-semibold text-[#F87171] mb-4">
                     What helps you most right now
                   </h3>
                   <div className="space-y-3">
-                    {energyResult.helps.map((item, i) => (
+                    {pathResult.helps.map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <span className="text-emerald-500 mt-0.5">&#10003;</span>
+                        <span className="text-[#EF4444] mt-0.5">&#10003;</span>
                         <span className="text-gray-300">{item}</span>
                       </div>
                     ))}
@@ -860,7 +899,7 @@ export default function QuizPage() {
                     What doesn&apos;t help
                   </h3>
                   <div className="space-y-2">
-                    {energyResult.doesntHelp.map((item, i) => (
+                    {pathResult.doesntHelp.map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <span className="text-red-400 mt-0.5">&#10007;</span>
                         <span className="text-gray-300">{item}</span>
@@ -874,15 +913,15 @@ export default function QuizPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.0 }}
-                  className="border-2 border-emerald-600 rounded-xl p-6 mb-6 bg-emerald-900/10"
+                  className="border-2 border-[#EF4444] rounded-xl p-6 mb-6 bg-red-900/10"
                 >
-                  <h3 className="text-lg font-semibold text-emerald-400 mb-4">
+                  <h3 className="text-lg font-semibold text-[#F87171] mb-4">
                     Start here
                   </h3>
                   <div className="space-y-3">
-                    {energyResult.startHere.map((item, i) => (
+                    {pathResult.startHere.map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <span className="text-emerald-400">&#10024;</span>
+                        <span className="text-[#F87171]">&#10024;</span>
                         <span className="text-gray-300">{item}</span>
                       </div>
                     ))}
@@ -894,13 +933,13 @@ export default function QuizPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.1 }}
-                  className="bg-[#111111] rounded-xl p-6 mb-8 border-l-4 border-emerald-500"
+                  className="bg-[#111111] rounded-xl p-6 mb-8 border-l-4 border-[#EF4444]"
                 >
-                  <h3 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-2">
+                  <h3 className="text-sm font-semibold text-[#F87171] uppercase tracking-wider mb-2">
                     A gentle truth
                   </h3>
                   <p className="text-gray-300 text-lg italic leading-relaxed">
-                    {energyResult.truth}
+                    {pathResult.truth}
                   </p>
                 </motion.div>
 
@@ -912,10 +951,10 @@ export default function QuizPage() {
                   className="bg-[#111111] rounded-xl p-6 mb-8"
                 >
                   <h3 className="text-lg font-semibold mb-2">
-                    Your dominant emotion: <span className="text-emerald-400">{emotionOverlay.label}</span>
+                    Your primary challenge: <span className="text-[#F87171]">{challengeOverlay.label}</span>
                   </h3>
-                  <p className="text-gray-300 mb-3">{emotionOverlay.description}</p>
-                  <p className="text-emerald-400 font-medium">Focus: {emotionOverlay.focus}</p>
+                  <p className="text-gray-300 mb-3">{challengeOverlay.description}</p>
+                  <p className="text-[#F87171] font-medium">Focus: {challengeOverlay.focus}</p>
                 </motion.div>
 
                 {/* Coaching Invitation */}
@@ -931,7 +970,7 @@ export default function QuizPage() {
                       If you&apos;re feeling a quiet &ldquo;yes&rdquo; as you read this, it may help to talk it through.
                     </p>
                     <p>
-                      I offer coaching for people who want clear guidance, not guesswork — especially when healing feels confusing or overwhelming.
+                      I offer guidance for souls who want clarity, not guesswork — especially when your path feels confusing or overwhelming.
                     </p>
                     <p className="font-medium text-[#FAF6E3]">
                       This isn&apos;t a sales call. It&apos;s a conversation.
@@ -939,7 +978,7 @@ export default function QuizPage() {
                     <div className="space-y-2 text-sm">
                       <p>We&apos;ll look at:</p>
                       <ul className="list-disc list-inside space-y-1 text-gray-400">
-                        <li>Your energy pattern</li>
+                        <li>Your heart path</li>
                         <li>What&apos;s actually holding you back</li>
                         <li>What would help you most right now</li>
                       </ul>
@@ -952,7 +991,7 @@ export default function QuizPage() {
                     href="https://calendly.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-6 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]"
+                    className="inline-block mt-6 bg-[#EF4444] hover:bg-[#DC2626] text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]"
                   >
                     Request a Clarity Conversation
                   </a>
@@ -977,6 +1016,19 @@ export default function QuizPage() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Version Toggle */}
+        <div className="fixed bottom-6 left-6 z-50">
+          <button
+            onClick={() => setVersion(version === 1 ? 2 : 1)}
+            className="flex items-center gap-2 bg-black/80 backdrop-blur-sm border border-white/20 text-white text-xs px-4 py-2 rounded-full hover:bg-black/90 transition-all"
+          >
+            <span className="opacity-60">Version</span>
+            <span className="font-bold">{version}</span>
+            <span className="opacity-40">|</span>
+            <span className="opacity-60">Switch to {version === 1 ? 2 : 1}</span>
+          </button>
+        </div>
       </div>
     </>
   );

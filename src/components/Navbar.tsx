@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
   const pathname = usePathname();
   const isQuizPage = pathname === "/quiz";
 
@@ -29,7 +31,7 @@ export default function Navbar() {
             href="/"
             className="font-ninja text-xl md:text-2xl text-white hover:opacity-80 transition-all duration-300"
           >
-            Alive Again
+            ✨💗🦋 Light Heart Vision
           </a>
 
           {/* Nav Links - only show on non-quiz pages */}
@@ -37,22 +39,60 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-8">
               <a
                 href="#why"
-                className="font-sans text-sm text-white/70 hover:text-white transition-colors"
+                className="font-sans text-sm text-white/70 hover:text-[#EF4444] transition-colors"
               >
-                My Story
+                The Vision
               </a>
               <a
                 href="#features"
-                className="font-sans text-sm text-white/70 hover:text-white transition-colors"
+                className="font-sans text-sm text-white/70 hover:text-[#EF4444] transition-colors"
               >
-                What I Offer
+                What&apos;s Inside
               </a>
               <a
                 href="#for-you"
-                className="font-sans text-sm text-white/70 hover:text-white transition-colors"
+                className="font-sans text-sm text-white/70 hover:text-[#EF4444] transition-colors"
               >
-                For You
+                Is This For You?
               </a>
+              
+              {/* Resources Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setShowResourcesDropdown(true)}
+                onMouseLeave={() => setShowResourcesDropdown(false)}
+              >
+                <button className="font-sans text-sm text-white/70 hover:text-[#EF4444] transition-colors flex items-center gap-1">
+                  Spiritual Resources
+                  <ChevronDown className="h-3 w-3" />
+                </button>
+                
+                {showResourcesDropdown && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-black/90 backdrop-blur-md border border-white/10 rounded-lg shadow-xl overflow-hidden z-50">
+                    <a
+                      href="/spiritual-affirmations"
+                      className="block px-4 py-3 text-sm text-white/70 hover:text-[#EF4444] hover:bg-white/5 transition-colors border-b border-white/10"
+                    >
+                      <div className="font-medium">Daily Affirmations</div>
+                      <div className="text-xs text-white/50">25 Spiritual Business Affirmations</div>
+                    </a>
+                    <a
+                      href="/sacred-business-models"
+                      className="block px-4 py-3 text-sm text-white/70 hover:text-[#EF4444] hover:bg-white/5 transition-colors border-b border-white/10"
+                    >
+                      <div className="font-medium">Sacred Business Models</div>
+                      <div className="text-xs text-white/50">67 Soul-Aligned Revenue Streams</div>
+                    </a>
+                    <a
+                      href="/spiritual-tech-integration"
+                      className="block px-4 py-3 text-sm text-white/70 hover:text-[#EF4444] hover:bg-white/5 transition-colors"
+                    >
+                      <div className="font-medium">Spiritual-Tech Integration</div>
+                      <div className="text-xs text-white/50">50+ Digital Templates</div>
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           )}
 
@@ -61,9 +101,9 @@ export default function Navbar() {
             {!isQuizPage && (
               <a
                 href="/quiz"
-                className="font-sans text-xs tracking-widest uppercase px-6 py-2 bg-[#9EB1C7] text-[#0A0A0A] hover:bg-[#b8c9d9] transition-all duration-300 rounded-sm"
+                className="font-sans text-xs tracking-widest uppercase px-6 py-2 bg-[#EF4444] text-white hover:bg-[#DC2626] transition-all duration-300 rounded-sm"
               >
-                Take the Pulse Check
+                Heart Path Assessment
               </a>
             )}
             {isQuizPage && (
@@ -71,18 +111,18 @@ export default function Navbar() {
                 href="https://calendly.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-xs tracking-widest uppercase px-6 py-2 bg-[#9EB1C7] text-[#0A0A0A] hover:bg-[#b8c9d9] transition-all duration-300 rounded-sm"
+                className="font-sans text-xs tracking-widest uppercase px-6 py-2 bg-[#EF4444] text-white hover:bg-[#DC2626] transition-all duration-300 rounded-sm"
               >
                 Book a Conversation
               </a>
             )}
             <a
-              href="https://www.amazon.com"
+              href="https://www.skool.com/lightheartvision"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-xs tracking-widest uppercase px-6 py-2 bg-[#D4A853] text-[#0A0A0A] hover:bg-[#c49943] transition-all duration-300 rounded-sm"
+              className="font-sans text-xs tracking-widest uppercase px-6 py-2 border border-[#EF4444] text-[#EF4444] hover:bg-[#EF4444] hover:text-white transition-all duration-300 rounded-sm"
             >
-              Join Our Space
+              Join Free
             </a>
           </div>
         </div>

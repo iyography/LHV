@@ -57,3 +57,7 @@ public/peace/
 /meeting.json
 /online.png
 /guide.pdf
+.env*.local
+
+# MCP Fireflies
+mcp-fireflies/

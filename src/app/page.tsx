@@ -101,11 +101,11 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
 }
 
 // ============================================
-// DESIGN 1: Dark Luxe (Current)
+// LIGHT HEART VISION
 // ============================================
-function Design1() {
+function LightHeartVision() {
   const videos = {
-    hero: "/peace/1.mp4",
+    hero: "/peace/heart.mp4",
     about: "/peace/5.mp4",
     midStatement: "/peace/12.mp4",
     whatIsnt: "/peace/10.mp4",
@@ -132,26 +132,34 @@ function Design1() {
           }}
         />
         <div className="relative z-20 max-w-5xl mx-auto px-8 py-32 text-center">
-          <h1 className="font-ninja text-5xl md:text-7xl lg:text-9xl leading-tight mb-8">
-            Alive Again
+          <h1 className="font-ninja text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
+            Embody a Higher Vision <span className="text-[#EF4444]">of a Life You Love</span>
           </h1>
-          <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-[#FAF6E3] max-w-3xl mx-auto mb-6 leading-relaxed">
-            Calm your mind. Heal yourself. Take back your inner power.
+          <p className="font-serif text-xl md:text-2xl lg:text-3xl text-[#FAF6E3] max-w-3xl mx-auto mb-6 leading-relaxed">
+            Stop building in isolation — start building from your <strong>Soul-aligned purpose</strong>
           </p>
-          <p className="font-sans text-xl md:text-2xl text-[#FAF6E3]/70 max-w-2xl mx-auto mb-12">
-            Energy healing. Qigong. Reiki. Daoist wisdom. Guided by a lifetime of practice.
+          <p className="font-sans text-lg md:text-xl text-[#FAF6E3]/70 max-w-2xl mx-auto mb-4">
+            For spiritual Skool creators &amp; collaborators who feel called to a higher vision.
           </p>
-          <a href="/quiz" className="inline-block font-sans font-semibold bg-[#D4A853] text-[#0A0A0A] px-12 py-4 rounded-full hover:bg-[#c49943] transition-colors">
-            Take the Pulse Check
-          </a>
+          <p className="font-sans text-base text-[#FAF6E3]/50 max-w-2xl mx-auto mb-12">
+            🔥 Free for now ~ not forever ⏳
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://www.skool.com/lightheartvision" target="_blank" rel="noopener noreferrer" className="inline-block font-sans font-semibold bg-[#EF4444] text-white px-12 py-4 rounded-full hover:bg-[#DC2626] transition-colors">
+              Join Free
+            </a>
+            <a href="/quiz" className="inline-block font-sans font-semibold border-2 border-[#EF4444] text-[#EF4444] px-12 py-4 rounded-full hover:bg-[#EF4444]/10 transition-colors">
+              Heart Path Assessment
+            </a>
+          </div>
         </div>
         <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
-          <span className="font-sans text-xs tracking-widest text-[#D4A853]/60">LI HEPING</span>
-          <span className="font-sans text-xs tracking-widest text-[#D4A853]/60">FEEL FULLY ALIVE AGAIN</span>
+          <span className="font-sans text-xs tracking-widest text-[#EF4444]/60">NATHANIEL PARANT</span>
+          <span className="font-sans text-xs tracking-widest text-[#EF4444]/60">TOGETHER — WE CO-CREATE HOME</span>
         </div>
       </section>
 
-      {/* Behind the Curtain - Video & Text */}
+      {/* About Section */}
       <section id="why" className="grid lg:grid-cols-2">
         <div className="aspect-square lg:aspect-auto lg:h-screen relative">
           <video
@@ -167,54 +175,108 @@ function Design1() {
         </div>
         <div className="flex items-center justify-center p-12 lg:p-24">
           <div className="max-w-lg">
-            <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#D4A853] block mb-6">My Story</span>
+            <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#EF4444] block mb-6">The Vision</span>
             <h2 className="font-ninja text-3xl lg:text-4xl leading-relaxed mb-8">
-              From grief to healing. From silence to service.
+              Built for spiritual creators,<br />not just influencers.
             </h2>
             <p className="font-sans text-lg text-[#FAF6E3]/60 leading-relaxed mb-6">
-              Over 30 years ago, I lost my daughter. I fell into deep depression. My health crashed. I withdrew from the world. The only emotion I felt was anger — otherwise I felt like a zombie.
+              You feel called to something greater. You have wisdom to share, a community to build, a vision to manifest.
             </p>
             <p className="font-sans text-lg text-[#FAF6E3]/60 leading-relaxed mb-6">
-              Then I discovered Reiki, studied Traditional Chinese Medicine, trained under a Medical Qigong Master, and was eventually ordained as a Daoist Priest. Each step brought me closer to feeling fully alive again.
+              Most spiritual creators struggle alone — unsure how to share their gifts without losing authenticity.
             </p>
-            <p className="font-serif text-2xl text-[#D4A853] italic">
-              Now I help others find that same path back to themselves.
+            <p className="font-sans text-lg text-[#FAF6E3]/60 leading-relaxed mb-6">
+              I have 20+ years of experience on the path, and have helped hundreds of individuals find peace and their purpose in life. I am devoted to World Enlightenment. Now, I&apos;m teaching all of it.
+            </p>
+            <p className="font-serif text-2xl text-[#EF4444] italic">
+              &quot;Together — We Co-Create HOME!&quot;
             </p>
           </div>
         </div>
       </section>
 
-      {/* What Happens Here */}
-      <section id="features" className="py-24 px-8 bg-[#0F0F0F]">
+      {/* What You'll Learn */}
+      <section className="py-24 px-8 bg-[#0F0F0F]">
         <div className="max-w-6xl mx-auto">
-          <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#D4A853] block mb-4 text-center">What I Offer</span>
+          <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#EF4444] block mb-4 text-center">In Here You&apos;ll Learn To</span>
           <div className="grid md:grid-cols-2 gap-8 mt-16">
-            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl">
-              <span className="text-4xl mb-4 block">&#x2728;</span>
-              <h3 className="font-ninja text-2xl mb-4">Energy Sessions</h3>
+            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-4xl mb-4 block">🔥</span>
+              <h3 className="font-ninja text-2xl mb-4">Structure Heart-Centered Offers</h3>
               <p className="font-sans text-lg text-[#FAF6E3]/60 leading-relaxed">
-                Over 2,000 sessions with clients. Reiki and energy healing that helps your body release what it&apos;s been holding. 170+ five-star reviews.
+                Create offers that attract aligned souls — without compromising your spiritual integrity.
               </p>
             </div>
-            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl">
-              <span className="text-4xl mb-4 block">&#x1F331;</span>
-              <h3 className="font-ninja text-2xl mb-4">Qigong Teaching</h3>
+            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-4xl mb-4 block">🍀</span>
+              <h3 className="font-ninja text-2xl mb-4">Maintain High-Vibe Leadership</h3>
               <p className="font-sans text-lg text-[#FAF6E3]/60 leading-relaxed">
-                Medical Qigong routines passed down from a true master. Simple, powerful practices you can use every day to restore your energy.
+                Lead your community without depletion. Stay grounded while holding space for others.
               </p>
             </div>
-            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl">
-              <span className="text-4xl mb-4 block">&#x1F9D8;</span>
-              <h3 className="font-ninja text-2xl mb-4">Reiki Training</h3>
+            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-4xl mb-4 block">🦋</span>
+              <h3 className="font-ninja text-2xl mb-4">Communicate Spiritual Awareness</h3>
               <p className="font-sans text-lg text-[#FAF6E3]/60 leading-relaxed">
-                From Level 1 through Reiki Master. Many of my graduates have gone on to start their own healing practices.
+                Share your wisdom while keeping authentic connection — no spiritual bypassing.
               </p>
             </div>
-            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl">
-              <span className="text-4xl mb-4 block">&#x262F;</span>
-              <h3 className="font-ninja text-2xl mb-4">Coaching &amp; Guidance</h3>
+            <div className="p-10 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-4xl mb-4 block">🫶</span>
+              <h3 className="font-ninja text-2xl mb-4">Nurture Members Into Contributors</h3>
               <p className="font-sans text-lg text-[#FAF6E3]/60 leading-relaxed">
-                Rooted in Daoist wisdom and Traditional Chinese Medicine. I help people calm their mind, understand their body, and take back their power.
+                Transform free members into founding contributors who believe in your vision.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Inside */}
+      <section id="features" className="py-24 px-8">
+        <div className="max-w-6xl mx-auto">
+          <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#EF4444] block mb-4 text-center">What&apos;s Inside (Priceless)</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <div className="p-8 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-3xl mb-4 block">🛠️</span>
+              <h3 className="font-ninja text-xl mb-3">Spiritual Community Launch Templates</h3>
+              <p className="font-sans text-[#FAF6E3]/60 leading-relaxed">
+                Heart-centered frameworks to structure offers that attract aligned souls.
+              </p>
+            </div>
+            <div className="p-8 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-3xl mb-4 block">🧘</span>
+              <h3 className="font-ninja text-xl mb-3">8-Day Gratitude Tune-UP Series</h3>
+              <p className="font-sans text-[#FAF6E3]/60 leading-relaxed">
+                Daily practices to maintain high-vibe leadership without depletion.
+              </p>
+            </div>
+            <div className="p-8 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-3xl mb-4 block">✨</span>
+              <h3 className="font-ninja text-xl mb-3">333+ Light Code Activations</h3>
+              <p className="font-sans text-[#FAF6E3]/60 leading-relaxed">
+                Communicate spiritual awareness while keeping authentic connection.
+              </p>
+            </div>
+            <div className="p-8 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-3xl mb-4 block">🎙️</span>
+              <h3 className="font-ninja text-xl mb-3">LHV Pod Guest Opportunities</h3>
+              <p className="font-sans text-[#FAF6E3]/60 leading-relaxed">
+                Share your wisdom and gifts with our growing conscious community.
+              </p>
+            </div>
+            <div className="p-8 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-3xl mb-4 block">🤝</span>
+              <h3 className="font-ninja text-xl mb-3">Monthly Co-Creation Circles</h3>
+              <p className="font-sans text-[#FAF6E3]/60 leading-relaxed">
+                Connect with fellow spiritual Skool creators and collaborators called to higher vision.
+              </p>
+            </div>
+            <div className="p-8 border border-[#FAF6E3]/10 rounded-2xl hover:border-[#EF4444]/50 transition-colors">
+              <span className="text-3xl mb-4 block">💗</span>
+              <h3 className="font-ninja text-xl mb-3">Direct Access to Nathaniel</h3>
+              <p className="font-sans text-[#FAF6E3]/60 leading-relaxed">
+                20+ years of experience on the path. Real guidance from real awakening.
               </p>
             </div>
           </div>
@@ -233,23 +295,48 @@ function Design1() {
         >
           <source src={videos.midStatement} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
           <p className="font-ninja text-4xl md:text-6xl text-white text-center px-8">
-            Your body knows how to heal. Let it.
+            Together — We Co-Create HOME!
           </p>
         </div>
       </section>
 
-      {/* The Clan */}
+      {/* Who This Is For */}
       <section id="for-you" className="py-24 px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#D4A853] block mb-6">For You</span>
-          <p className="font-serif text-3xl lg:text-4xl leading-relaxed mb-8">
-            Whether you&apos;re drained from years of carrying too much, stuck in tension you can&apos;t release, or searching for a way back to yourself — there is a path. I&apos;ve walked it. I can help you find yours.
-          </p>
-          <p className="font-sans text-xl text-[#FAF6E3]/70 italic">
-            Take the quiz. Understand your pattern. Begin healing.
-          </p>
+          <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#EF4444] block mb-6">Is This For You?</span>
+          <h2 className="font-ninja text-3xl lg:text-4xl mb-12">This community is for...</h2>
+          <div className="grid md:grid-cols-2 gap-6 text-left mb-12">
+            <div className="flex items-start gap-4 p-6 bg-[#0F0F0F] rounded-xl">
+              <span className="text-2xl">✨</span>
+              <div>
+                <h4 className="font-semibold text-[#FAF6E3] mb-1">Spiritual Skool creators</h4>
+                <p className="text-[#FAF6E3]/60">Called to build conscious community bridges</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-[#0F0F0F] rounded-xl">
+              <span className="text-2xl">💗</span>
+              <div>
+                <h4 className="font-semibold text-[#FAF6E3] mb-1">Heart-centered leaders</h4>
+                <p className="text-[#FAF6E3]/60">Who want to structure offers that attract aligned souls</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-[#0F0F0F] rounded-xl">
+              <span className="text-2xl">🦋</span>
+              <div>
+                <h4 className="font-semibold text-[#FAF6E3] mb-1">Awakening guides</h4>
+                <p className="text-[#FAF6E3]/60">Ready to nurture free members into founding contributors</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 p-6 bg-[#0F0F0F] rounded-xl">
+              <span className="text-2xl">🔥</span>
+              <div>
+                <h4 className="font-semibold text-[#FAF6E3] mb-1">Visionaries</h4>
+                <p className="text-[#FAF6E3]/60">Who feel called to co-create the New Earth</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -265,40 +352,57 @@ function Design1() {
         >
           <source src={videos.whatIsnt} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#D4A853] block mb-8">What This Isn&apos;t</span>
-          <p className="font-sans text-2xl text-[#FAF6E3]/80 mb-8">
-            No quick fixes. No empty promises. No spiritual bypassing.
-          </p>
-          <p className="font-serif text-4xl lg:text-5xl text-[#FAF6E3] italic">
-            Just honest guidance from someone who&apos;s done the work.
+          <span className="font-sans text-sm tracking-[0.3em] uppercase text-[#EF4444] block mb-8">What This Isn&apos;t</span>
+          <div className="space-y-4 text-xl md:text-2xl mb-12">
+            <p className="flex items-center justify-center gap-4">
+              <span className="text-red-400">✗</span>
+              <span>This isn&apos;t about chasing followers or going viral</span>
+            </p>
+            <p className="flex items-center justify-center gap-4">
+              <span className="text-red-400">✗</span>
+              <span>No hustle culture. No burnout. No inauthenticity.</span>
+            </p>
+            <p className="flex items-center justify-center gap-4">
+              <span className="text-red-400">✗</span>
+              <span>You don&apos;t need to compromise your spiritual integrity</span>
+            </p>
+          </div>
+          <p className="font-serif text-3xl lg:text-4xl text-[#FAF6E3] italic">
+            Built for souls who value authenticity and alignment.
           </p>
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="py-32 px-8 text-center">
-        <span className="font-sans text-sm tracking-[0.5em] uppercase text-[#D4A853] block mb-8">Your Next Step</span>
-        <h2 className="font-ninja text-3xl lg:text-4xl mb-10">
-          You don&apos;t have to figure this out alone.
+        <span className="font-sans text-sm tracking-[0.5em] uppercase text-[#EF4444] block mb-8">Your Calling</span>
+        <h2 className="font-ninja text-3xl lg:text-4xl mb-6">
+          Ready to embody your higher vision?
         </h2>
+        <p className="text-lg text-[#FAF6E3]/60 mb-10 max-w-2xl mx-auto">
+          Join the free community and start co-creating with aligned souls.
+        </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/quiz" className="inline-block font-sans font-semibold bg-[#D4A853] text-[#0A0A0A] px-14 py-5 rounded-full hover:bg-[#c49943] transition-colors text-xl">
-            Take the Pulse Check
+          <a href="https://www.skool.com/lightheartvision" target="_blank" rel="noopener noreferrer" className="inline-block font-sans font-semibold bg-[#EF4444] text-white px-14 py-5 rounded-full hover:bg-[#DC2626] transition-colors text-xl">
+            Join Free
           </a>
-          <a href="https://www.amazon.com" target="_blank" rel="noopener noreferrer" className="inline-block font-sans font-semibold border-2 border-[#D4A853] text-[#D4A853] px-14 py-5 rounded-full hover:bg-[#D4A853]/10 transition-colors text-xl">
-            Read the Book
+          <a href="/quiz" className="inline-block font-sans font-semibold border-2 border-[#EF4444] text-[#EF4444] px-14 py-5 rounded-full hover:bg-[#EF4444]/10 transition-colors text-xl">
+            Heart Path Assessment
           </a>
         </div>
+        <p className="text-sm text-[#FAF6E3]/50 mt-6">
+          🔥 Free for now ~ not forever ⏳
+        </p>
       </section>
 
       {/* Footer */}
       <footer className="py-16 px-8 border-t border-[#FAF6E3]/10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <span className="font-ninja text-2xl">Alive Again</span>
+          <span className="font-ninja text-2xl">✨💗🦋 Light Heart Vision</span>
           <span className="font-sans text-xs text-[#FAF6E3]/30">
-            <a href="/admin" className="hover:text-[#FAF6E3]/50 transition-colors">&copy;</a> 2026 Feel Fully Alive Again. All rights reserved.
+            <a href="/admin" className="hover:text-[#FAF6E3]/50 transition-colors">&copy;</a> 2026 Light Heart Vision. All rights reserved.
           </span>
         </div>
       </footer>
@@ -313,7 +417,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Design1 />
+      <LightHeartVision />
     </>
   );
 }

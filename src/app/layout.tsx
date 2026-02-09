@@ -38,30 +38,30 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Feel Fully Alive Again",
-  description: "Calm your mind. Heal yourself. Take back your inner power. Energy healing, Qigong, Reiki, and Daoist wisdom guided by a lifetime of practice.",
+  title: "Light Heart Vision",
+  description: "Embody a Higher Vision of a Life You Love. For spiritual Skool creators & collaborators who feel called to a higher vision. Together — We Co-Create HOME!",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Feel Fully Alive Again",
-    description: "Calm your mind. Heal yourself. Take back your inner power. Energy healing, Qigong, Reiki, and Daoist wisdom guided by a lifetime of practice.",
+    title: "Light Heart Vision",
+    description: "Embody a Higher Vision of a Life You Love. For spiritual Skool creators & collaborators who feel called to a higher vision. Together — We Co-Create HOME!",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Feel Fully Alive Again",
+        alt: "Light Heart Vision",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Feel Fully Alive Again",
-    description: "Calm your mind. Heal yourself. Take back your inner power. Energy healing, Qigong, Reiki, and Daoist wisdom guided by a lifetime of practice.",
+    title: "Light Heart Vision",
+    description: "Embody a Higher Vision of a Life You Love. For spiritual Skool creators & collaborators who feel called to a higher vision. Together — We Co-Create HOME!",
     images: ["/og-image.png"],
   },
 };
