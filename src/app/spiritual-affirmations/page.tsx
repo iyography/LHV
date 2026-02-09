@@ -417,7 +417,9 @@ export default function SpiritualAffirmationsPage() {
       }
     `;
     document.head.appendChild(style);
-    return () => document.head.removeChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   const filteredAffirmations = useMemo(() => {
