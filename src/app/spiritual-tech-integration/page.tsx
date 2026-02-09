@@ -91,7 +91,7 @@ export default function SpiritualTechIntegrationPage() {
 
       const matchesCategory = categoryFilter === '' || integration.category === categoryFilter;
       const matchesStage = stageFilter === '' || integration.businessStage === stageFilter;
-      const matchesDifficulty = difficultyFilter === '' || integration.difficultyLevel === difficultyLevel;
+      const matchesDifficulty = difficultyFilter === '' || integration.difficultyLevel === difficultyFilter;
 
       return matchesSearch && matchesCategory && matchesStage && matchesDifficulty;
     });
