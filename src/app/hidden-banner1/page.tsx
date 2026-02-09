@@ -256,7 +256,6 @@ export default function HiddenBanner1() {
                 }}
                 className="bg-transparent border-2 outline-none text-center w-full"
                 style={{ borderColor: theme.accent, color: theme.text }}
-                style={{ color: theme.text }}
                 autoFocus
               />
             ) : (
