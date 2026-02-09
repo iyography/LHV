@@ -300,8 +300,7 @@ Align Your Purpose with Profit
           {/* Supporting Text */}
           <motion.p
             className="mt-8 font-semibold max-w-2xl cursor-pointer"
-            style={{ color: `${theme.text}E6` }}
-            style={{ fontSize: `${supportSize}px` }}
+            style={{ color: `${theme.text}E6`, fontSize: `${supportSize}px` }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}

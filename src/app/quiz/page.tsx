@@ -19,6 +19,7 @@ interface QuizOption {
     path?: SpiritualPathType;
     challenge?: ChallengeType;
     readiness?: ReadinessLevel;
+    investment?: InvestmentLevel;
   };
 }
 
